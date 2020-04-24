@@ -1,5 +1,5 @@
 
-class Account(object):
+class Account():
     ID_COUNT = 1
 
     def __init__(self, name, **kwargs):
@@ -132,29 +132,25 @@ class Bank(object):
 
         return self.__checkAccountIntegrity(a)
 
+# a1 = Account("slim")
+# a2 = Account("shady")
+# a3 = Account("chikachika")
+# a3.wtf = "HEY"
+
+# a1.transfer(1000)
+# a2.transfer(2000)
+
+# b = Bank()
+
+# b.add(a1)
+# b.add(a2)
+# b.add(a3)
+
+# print("Transfer between a1 and a2")
+# result1 = b.transfer(a1.id, a2.name, 200)
+# print(result1)
 
 
-
-
-a1 = Account("slim")
-a2 = Account("shady")
-a3 = Account("chikachika")
-a3.wtf = "HEY"
-
-a1.transfer(1000)
-a2.transfer(2000)
-
-b = Bank()
-
-b.add(a1)
-b.add(a2)
-b.add(a3)
-
-print("Transfer between a1 and a2")
-result1 = b.transfer(a1.id, a2.name, 200)
-print(result1)
-
-
-print("Fixing a3")
-result2 = b.fix_account(a3.name)
-print(result2)
+# print("Fixing a3")
+# result2 = b.fix_account(a3.name)
+# print(result2)
