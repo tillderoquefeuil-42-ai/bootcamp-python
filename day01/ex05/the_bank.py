@@ -3,13 +3,6 @@ class Account():
     ID_COUNT = 1
 
     def __init__(self, name, *arg, **kwargs):
-        for key, value in kwargs.items():
-            print ("%s == %s" %(key, value))
-
-        for i in range(0, len(arg)):
-            key = "var_" + str(i)
-            print ("%s == %s" %(key, arg[i]))
-
         self.id = self.ID_COUNT
         self.name = name
         self.__dict__.update(arg[0])
@@ -139,25 +132,24 @@ class Bank(object):
 
         return self.__checkAccountIntegrity(a)
 
-# a1 = Account("slim")
-# a2 = Account("shady")
-# a3 = Account("chikachika")
-# a3.wtf = "HEY"
+# a1 = Account("slim", {'value':90})
+# a2 = Account("shady", {'value':90})
+# a3 = Account("chikachika", {'zip': '911-745', 'value': 1000.0, 'bref': '1044618427ff2782f0bbece0abd05f31'})
 
-# a1.transfer(1000)
-# a2.transfer(2000)
+# # a1.transfer(1000)
+# # a2.transfer(2000)
 
-# b = Bank()
+# # b = Bank()
 
-# b.add(a1)
-# b.add(a2)
-# b.add(a3)
+# # b.add(a1)
+# # b.add(a2)
+# # b.add(a3)
 
-# print("Transfer between a1 and a2")
-# result1 = b.transfer(a1.id, a2.name, 200)
-# print(result1)
+# # print("Transfer between a1 and a2")
+# # result1 = b.transfer(a1.id, a2.name, 200)
+# # print(result1)
 
 
-# print("Fixing a3")
-# result2 = b.fix_account(a3.name)
-# print(result2)
+# # print("Fixing a3")
+# # result2 = b.fix_account(a3.name)
+# # print(result2)
