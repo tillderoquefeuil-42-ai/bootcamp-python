@@ -2,11 +2,17 @@
 class Account():
     ID_COUNT = 1
 
-    def __init__(self, name, **kwargs):
+    def __init__(self, name, *arg, **kwargs):
+        for key, value in kwargs.items():
+            print ("%s == %s" %(key, value))
+
+        for i in range(0, len(arg)):
+            key = "var_" + str(i)
+            print ("%s == %s" %(key, arg[i]))
+
         self.id = self.ID_COUNT
         self.name = name
-        self.value = 0
-        self.__dict__.update(kwargs)
+        self.__dict__.update(arg[0])
 
         if hasattr(self, 'value'):
             self.value = 0
@@ -85,6 +91,7 @@ class Bank(object):
         return account
 
     def add(self, account):
+        print("{account.id}, {account.name}, {account.value}".format(account=account))
         self.__isAccountType(account)
         self.account.append(account)
 
